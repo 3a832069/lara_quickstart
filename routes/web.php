@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
-use App\Task;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
