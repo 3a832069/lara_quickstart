@@ -1,8 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- 建立任務表單... -->
+    <div class="panel-body">
+        <!-- Display Validation Errors -->
+    @include('common.errors')
 
+
+    <!-- New Task Form -->
+        <form action="{{ url('task') }}" method="POST" class="form-horizontal">
+        {{ csrf_field() }}
+
+        <!-- Task Name -->
+            <div class="form-group">
+                <label for="task" class="col-sm-3 control-label">Task</label>
+
+                <div class="col-sm-6">
+                    <input type="text" name="name" id="task-name" class="form-control">
+                </div>
+            </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Add Task
+            </button>
+        </div>
+    </div>
+    </form>
+    </div>
     <!-- 目前任務 -->
     @if (count($tasks) > 0)
         <div class="panel panel-default">
